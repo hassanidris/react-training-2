@@ -1,14 +1,26 @@
 // import ListGroup from "./components/ListGroup";
 
+import { useState } from "react";
+
 // import { BsFillCalendarFill } from "react-icons/bs";
 
 // import { useState } from "react";
 // import Alert from "./components/Alert";
 
-// import Button from "./components/Button";
-import Like from "./components/Like";
+import Button from "./components/Button";
+// import Like from "./components/Like";
 
 function App() {
+  // [false, true]
+  const [isVisible, setVisibility] = useState(false);
+  const [isApproved, setApproved] = useState(true);
+
+  const handleClick = () => {
+    setVisibility(true);
+
+    console.log(isVisible);
+  };
+
   // let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
   // const handleSelectItem = (item: string) => {
@@ -19,7 +31,8 @@ function App() {
 
   return (
     <div>
-      <Like onClick={() => console.log("clicked")} />
+      <Button onClick={handleClick}>Show</Button>
+      {/* <Like onClick={() => console.log("clicked")} /> */}
       {/* <Button onClick={() => console.log("clicked")}>My button</Button> */}
       {/* <BsFillCalendarFill color="red" size="40" /> */}
       {/* {alertVisible && (
